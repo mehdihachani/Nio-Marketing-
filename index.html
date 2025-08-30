@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NIO Marketing - تصميم شعارات احترافية، بوسترات تسويقية، وأعمال جرافيك بأسعار تنافسية في الجزائر." />
+  <title>NIO Marketing | تصميمات احترافية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="https://i.ibb.co/Q7gNJ9C4/logo.png" type="image/x-icon" />
+  <style>
+    :root {
+      font-family: 'Tajawal', sans-serif;
+      --main-color: #002147;
+      --accent-color: #1acf64;
+      --bg-gradient: linear-gradient(120deg, #f5f8fa 0%, #e7f9ef 100%);
+      --text-dark: #202b38;
+      --transition: all .25s cubic-bezier(.4,.6,.65,1.1);
+    }
+    * { 
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    body {
+      margin: 0;
+      font-family: inherit;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+    body.modal-open {
+      overflow: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 32px 8px 14px;
+      background: transparent;
+    }
+    header img.logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      background: transparent;
+      border-radius: 16px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--main-color);
+      margin: 0 0 8px 0;
+      letter-spacing: .5px;
+    }
+    header .description {
+      color: #3a3a3a;
+      font-size: 1.12rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      background: var(--main-color);
+      padding: 0.7rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 14px #00214711;
+      border-radius: 0 0 18px 18px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.07rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: var(--transition);
+      letter-spacing: 0.5px;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent-color);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 2vw;
+    }
+    section {
+      margin-bottom: 45px;
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+      text-align: center;
+    }
+    section h2 {
+      color: var(--main-color);
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 0 auto 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      letter-spacing: .7px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border: 2px solid transparent;
+      position: relative;
+      cursor: pointer;
+    }
+    section h2:hover {
+      box-shadow: 0 0 0 2px var(--accent-color);
+      background: #f0fff8;
+      transform: translateY(-3px);
+    }
+    section h2 i {
+      margin-left: 10px;
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+    }
+    .services-intro {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      display: none;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .services-intro.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .services-intro p {
+      margin: 0 0 15px;
+      color: #333;
+    }
+    .services-intro strong {
+      color: var(--main-color);
+      font-weight: 800;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 0;
+    }
+    .service-card {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      letter-spacing: .5px;
+      background: var(--main-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 33, 71, 0.25);
+      transition: var(--transition);
+      border: 2px solid var(--main-color);
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+      flex-direction: row;
+      gap: 8px;
+      min-width: 180px;
+    }
+    .service-card:hover {
+      box-shadow: 0 0 0 2px var(--accent-color);
+      background: #fff;
+      color: var(--main-color);
+      transform: translateY(-3px) scale(1.05);
+    }
+    .service-card i {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin: 0;
+      transition: var(--transition);
+    }
+    .service-card:hover i {
+      color: var(--main-color);
+      transform: rotate(10deg);
+    }
+    .price-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      right: 0; left: 0; top: 0; bottom: 0;
+      background: rgba(0,0,0,0.25);
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .price-modal.active {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 22px;
+      padding: 32px 25px 22px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,.14);
+      min-width: 270px;
+      max-width: 92vw;
+      text-align: center;
+      transform: scale(0.9);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .price-modal.active .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .modal-content h3 {
+      margin: 0 0 15px;
+      color: var(--main-color);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+    .modal-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .modal-content li {
+      font-size: 1.08rem;
+      margin-bottom: 9px;
+      color: #222;
+    }
+    .close-modal {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      font-size: 1.01rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px auto 0;
+      transition: background .18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .close-modal:hover { background: #17b75a; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 17px;
+      margin-bottom: 7px;
+      margin-top: 7px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 13px;
+      position: relative;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      aspect-ratio: 1/1;
+      transition: transform 0.3s ease;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+      loading: lazy;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .cta-button {
+      text-decoration: none;
+      background: var(--accent-color);
+      color: #fff;
+      font-size: 1.09rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 30px;
+      padding: 11px 28px;
+      margin: 0 auto 11px;
+      display: inline-block;
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: none;
+      letter-spacing: 1px;
+    }
+    .cta-button i { margin-left: 7px; }
+    .cta-button:hover, .cta-button:focus {
+      background: #17b75a;
+      transform: scale(1.04);
+    }
+    form {
+      max-width: 350px;
+      margin: 20px auto 0;
+      background: rgba(255,255,255,0.8);
+      border-radius: 13px;
+      padding: 15px 14px 12px;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: none;
+    }
+    input, textarea, button, select {
+      padding: 11px;
+      border: 1.2px solid #dbeee7;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-family: 'Tajawal', sans-serif;
+      background: #fff;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      background: #e9f5ec;
+    }
+    form button[type="submit"] {
+      margin-top: 6px;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 3px 10px rgba(26, 207, 100, 0.25);
+      white-space: nowrap;
+    }
+    .contact-btn:hover {
+      background: #17b75a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(26, 207, 100, 0.35);
+    }
+    .contact-btn i {
+      margin-left: 8px;
+      font-size: 1.1rem;
+    }
+    .phone-btn {
+      background: var(--main-color);
+      box-shadow: 0 3px 10px rgba(0, 33, 71, 0.25);
+    }
+    .phone-btn:hover {
+      background: #003366;
+      box-shadow: 0 5px 14px rgba(0, 33, 71, 0.35);
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .contact-icons a {
+      background: #ffffff;
+      color: var(--main-color);
+      font-size: 1.6rem;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      text-decoration: none;
+      outline: none;
+      border: none;
+    }
+    .contact-icons a:hover {
+      background: var(--accent-color);
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .contact-icons a:focus {
+      outline: none;
+    }
+    .qr-container {
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .qr-block img {
+      border-radius: 0 !important;
+      background: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      width: 140px !important;
+      max-width: 100% !important;
+      height: auto;
+      object-fit: contain;
+      loading: lazy;
+    }
+    footer {
+      background: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 14px 0;
+      font-size: 1rem;
+      margin-top: 18px;
+      border-radius: 16px 16px 0 0;
+      letter-spacing: 1px;
+      box-shadow: 0 -3px 14px #1acf6412;
+    }
+    
+    /* التعديلات الجديدة */
+    #services h2 {
+      background-color: var(--main-color);
+      color: var(--accent-color);
+      border: 2px solid var(--main-color);
+    }
+    #services h2:hover {
+      background-color: var(--accent-color);
+      color: var(--main-color);
+      border-color: var(--accent-color);
+    }
+    
+    @media (max-width: 900px) {
+      main { padding: 0 1vw; }
+      .gallery { gap: 10px; }
+      .service-card {
+        padding: 10px 16px;
+        font-size: 1rem;
+        min-width: 160px;
+      }
+    }
+    @media (max-width: 600px) {
+      .services-list {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      .service-card {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 1rem;
+        min-width: auto;
+      }
+      header { padding: 20px 2px 7px; }
+      header img.logo { width: 80px; height: 80px; }
+      nav { gap: 4px; padding: 0.6rem 0; }
+      nav a { font-size: 0.96rem; padding: 7px 7px;}
+      section { margin-bottom: 23px;}
+      .gallery { grid-template-columns: 1fr; }
+      .qr-container { gap: 5px; }
+      section h2 { 
+        font-size: 1.5rem; 
+        padding: 12px 20px;
+        margin-bottom: 25px;
+      }
+      .services-intro {
+        padding: 15px;
+        font-size: 1rem;
+      }
+      .modal-content {
+        padding: 24px 20px;
+      }
+      .modal-content h3 {
+        font-size: 1.5rem !important;
+      }
+      .modal-content li {
+        font-size: 1.2rem !important;
+      }
+      .close-modal {
+        font-size: 1.2rem !important;
+        padding: 8px 24px;
+        width: auto;
+        height: auto;
+        border-radius: 24px;
+      }
+    }
+    ::selection { background: #1acf6433; }
+  
+    /* Injected gallery scroll CSS */
+
+.gallery-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.gallery-scroll img {
+  height: 160px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.gallery-scroll img:hover { transform: scale(1.05); }
+
+
+/* Beautified gallery scroll */
+.gallery-scroll {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 14px 4px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+}
+.gallery-scroll img {
+  height: 220px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.gallery-scroll img:hover { 
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Beautify modal text */
+.modal-content h3 {
+  color: var(--accent-color) !important;
+  font-size: 1.4rem !important;
+}
+.modal-content li {
+  color: var(--accent-color) !important;
+  font-size: 1.05rem !important;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Smaller nicer buttons with modern hover */
+.service-card {
+  font-size: 1rem !important;
+  padding: 10px 16px !important;
+  min-width: 150px !important;
+  border-radius: 10px !important;
+}
+.service-card i {
+  font-size: 1.1rem !important;
+  color: #fff !important;
+  background: var(--accent-color);
+  padding: 6px;
+  border-radius: 50%;
+}
+.service-card:hover i {
+  background: var(--main-color);
+  color: #fff !important;
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* Close button prettier */
+.close-modal {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 1rem !important;
+  background: var(--main-color) !important;
+  border-radius: 50% !important;
+}
+.close-modal:hover {
+  background: var(--accent-color) !important;
+}
+
+
+/* Polished styles */
+
+/* Services intro blur box */
+.services-intro {
+  background: rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 1rem !important;
+}
+
+/* Services header button smaller with nicer icon */
+#services h2 {
+  font-size: 1.3rem !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+}
+#services h2 i {
+  font-size: 1.2rem !important;
+  margin-left: 8px !important;
+}
+
+/* Services list side by side */
+.services-list {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 20px !important;
+}
+
+/* Navbar polish */
+nav {
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid var(--accent-color);
+}
+nav a {
+  transition: background 0.3s ease, transform 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav a:hover {
+  backdrop-filter: blur(4px);
+  background: rgba(26,207,100,0.25) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Modal text smaller */
+.modal-content li {
+  font-size: 0.95rem !important;
+}
+
+</style>
+
+<style>
+/* === Overrides & Optimizations === */
+header img.logo { width:160px !important; height:160px !important; }
+.service-card { padding:8px 10px !important; font-size:0.9rem !important; border-radius:8px !important; }
+.service-card svg { width:20px !important; height:20px !important; }
+input, textarea, select { padding:8px !important; font-size:0.9rem !important; border-radius:6px !important; }
+form { max-width:340px !important; padding:12px !important; border-radius:10px !important; }
+.gallery img { border-radius:8px !important; box-shadow:0 4px 12px rgba(0,0,0,.1) !important; transition:transform .3s !important; }
+.gallery img:hover { transform:scale(1.04) !important; }
+.price-modal .close-modal, .modal-close { display:none !important; }
+</style>
+
+</head>
+<body>
+  <header>
+    <img class="logo" src="https://i.ibb.co/Q7gNJ9C4/logo.png" alt="شعار NIO" loading="lazy" />
+    <h1>NIO Marketing</h1>
+    <div class="description">نحن خبراء التصميم العصري — شعارات فخمة، بوسترات مبهرة، بأسعار منافسة وسرعة تنفيذ.</div>
+  </header>
+  <nav>
+    <a href="#services">الخدمات</a>
+    <a href="#prices">الأسعار</a>
+    <a href="#logos">شعارات</a>
+    <a href="#posters">بوسترات</a>
+    <a href="#contact">تواصل</a>
+  </nav>
+  <main>
+    <section id="services" style="margin-top: 40px;">
+      <h2 onclick="toggleServicesIntro()">
+        ماذا نقدم؟ 
+        <i class="fas fa-circle-info"></i>
+      </h2>
+      <div class="services-intro" id="servicesIntro">
+        <p>في <strong>NIO Marketing</strong>، نقدم حلولاً إبداعية ومبتكرة تلبي احتياجاتك التسويقية والعلامة التجاریة. فريقنا من المصممين المحترفين یعملون بجد لتحویل أفكارك إلى واقع ملموس.</p>
+        <p>نحن نؤمن بأن التصمیم الجید هو أساس النجاح التجاري، ولذلك نقدم خدماتنا بأعلى معايیر الجودة والاحترافیة. سواء كنت بحاجة إلى شعار ممیز یعكس هویتك، أو بوسترات جذابة تلفت الأنظار، نحن هنا لمساعدتك.</p>
+        <p>استكشف خدماتنا أدناه واكتشف كيف يمكننا مساعدتك في تحقيق أهدافك التسویقیة وبناء علامتك التجاریة.</p>
+      </div>
+      <div class="services-list">
+        <button class="service-card" onclick="showPrice('logo')">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          تصميم شعار احترافي
+        </button>
+        <button class="service-card" onclick="showPrice('poster')">
+          <i class="fas fa-clapperboard"></i>
+          تصميم بوستر تسويقي
+        </button>
+      </div>
+    </section>
+    <section id="prices">
+      <h2>الأسعار</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/0j736DTn/20250725-211259-2.jpg" alt="الأسعار 1" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/XfqF9j2s/20250725-211259-1.jpg" alt="الأسعار 2" loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <section id="logos">
+      <h2>من أعمالنا - شعارات</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/Cp9yM21T/logo1.png" alt="شعار 1" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/SXJ21nJF/logo3.png" alt="شعار 2" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/kVjwcVv6/logo2.png" alt="شعار 3" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/whZm8xL4/20250803-021347.png" alt="4 شعار" loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <section id="posters">
+      <h2>من أعمالنا - بوسترات</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/twhjZJvs/postre1.jpg" alt="بوستر 1" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/bDL19kg/postre2.jpg" alt="بوستر 2" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.ibb.co/GvwKzCn1/postre3.jpg" alt="بوستر 3" loading="lazy" />
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>تواصل معنا</h2>
+      <div class="contact-buttons">
+        <a href="tel:+213771089064" class="contact-btn phone-btn">
+          <i class="fas fa-phone"></i>اتصل بنا
+        </a>
+        <a href="https://wa.me/213771089064" class="contact-btn" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>واتساب
+        </a>
+      </div>
+      <form autocomplete="off" onsubmit="event.preventDefault();alert('تم إرسال رسالتك بنجاح! سنرد عليك قریباً.');this.reset();">
+        <input type="text" placeholder="اسمك" required />
+        <input type="email" placeholder="بريدك الإلكتروني" required />
+        <textarea rows="4" placeholder="رسالتك" required></textarea>
+        <button type="submit" class="cta-button">أرسل</button>
+      </form>
+      <div class="contact-icons">
+        <a href="https://www.facebook.com/profile.php?id=61575335407711" target="_blank" rel="noopener" title="فیسبوك"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/213771089064" target="_blank" rel="noopener" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:contact@niomarketing.com" title="إیمیل"><i class="far fa-envelope"></i></a>
+      </div>
+      <div class="qr-container">
+        <div class="qr-block">
+          <img src="https://i.ibb.co/fYdXJRDp/qrcode.png" alt="QR واتساب" title="تواصل عبر واتساب" loading="lazy" />
+          <img src="https://i.ibb.co/Kj5GLcqL/20250731-012043.png" alt="QR النص" title="زیارة الموقع" loading="lazy" />
+          <img src="https://i.ibb.co/zTR3C9P1/20250803-013034.png" style="width: 180px; height: auto;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © 2025 NIO Marketing 
+  </footer>
+  <div class="price-modal" id="modalLogo" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="logoTitle">
+      <h3 id="logoTitle">أسعار تصميم الشعار</h3>
+      <ul>
+        <li>شعار خاص بك: <b>9000 دج</b></li>
+        <li>شعار مع ملحقات: <b>11000 دج</b></li>
+      </ul>
+<h4 style="margin-top:12px;margin-bottom:8px;color:var(--main-color);">من أعمالنا</h4>
+<div class="gallery-scroll">
+  <img src="https://i.ibb.co/Cp9yM21T/logo1.png" alt="شعار" loading="lazy" />
+  <img src="https://i.ibb.co/SXJ21nJF/logo3.png" alt="شعار" loading="lazy" />
+  <img src="https://i.ibb.co/kVjwcVv6/logo2.png" alt="شعار" loading="lazy" />
+  <img src="https://i.ibb.co/whZm8xL4/20250803-021347.png" alt="شعار" loading="lazy" />
+</div>
+
+      
+    </div>
+  </div>
+  <div class="price-modal" id="modalPoster" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="posterTitle">
+      <h3 id="posterTitle">أسعار تصميم البوسترات</h3>
+      <ul>
+        <li>بوستر 1: <b>4000 دج</b></li>
+        <li>2 بوستر: <b>6000 دج</b></li>
+        <li>3 بوستر: <b>8000 دج</b></li>
+      </ul>
+<h4 style="margin-top:12px;margin-bottom:8px;color:var(--main-color);">من أعمالنا</h4>
+<div class="gallery-scroll">
+  <img src="https://i.ibb.co/twhjZJvs/postre1.jpg" alt="بوستر" loading="lazy" />
+  <img src="https://i.ibb.co/bDL19kg/postre2.jpg" alt="بوستر" loading="lazy" />
+  <img src="https://i.ibb.co/GvwKzCn1/postre3.jpg" alt="بوستر" loading="lazy" />
+</div>
+
+      
+    </div>
+  </div>
+  <script>
+    // فتح/غلق فقرة "ماذا نقدم؟"
+    function toggleServicesIntro() {
+      const intro = document.getElementById('servicesIntro');
+      const icon = document.querySelector('#services h2 i');
+      intro.classList.toggle('show');
+      icon.classList.toggle('fa-rotate-180');
+    }
+
+    // إظهار الأسعار حسب النوع
+    function showPrice(type) {
+      closeModal();
+      if (type === 'logo') {
+        document.getElementById('modalLogo').classList.add('active');
+        document.getElementById('modalLogo').setAttribute('aria-hidden', 'false');
+      }
+      if (type === 'poster') {
+        document.getElementById('modalPoster').classList.add('active');
+        document.getElementById('modalPoster').setAttribute('aria-hidden', 'false');
+      }
+      document.body.classList.add('modal-open');
+    }
+
+    // غلق أي نافذة أسعار مفتوحة
+    function closeModal() {
+      document.querySelectorAll('.price-modal').forEach(function(modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      });
+      document.body.classList.remove('modal-open');
+    }
+
+    // مستمعات أحداث قوية لمنع الأخطاء السابقة وإتاحة الغلق بالنقر خارج المحتوى/زر ESC
+    (function attachModalListeners() {
+      document.querySelectorAll('.price-modal').forEach(function(modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) { closeModal(); }
+        });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeModal(); }
+      });
+    })();
+  </script>
+</body>
+</html>
