@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="NIO Marketing - تصميم شعارات احترافية، بوسترات تسويقية، وأعمال جرافيك بأسعار تنافسية في الجزائر." name="description"/>
+<title>NIO Marketing | تصميمات احترافية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://i.ibb.co/Q7gNJ9C4/logo.png" rel="icon" type="image/x-icon"/>
+<style>
+    :root {
+      font-family: 'Tajawal', sans-serif;
+      --main-color: #002147;
+      --accent-color: #1acf64;
+      --bg-gradient: linear-gradient(120deg, #f5f8fa 0%, #e7f9ef 100%);
+      --text-dark: #202b38;
+      --transition: all .25s cubic-bezier(.4,.6,.65,1.1);
+    
+      
+      
+      
+      --bg1: #ffffff;
+      --bg2: #fafafa;
+      --bg3: #ffffff;
+      --bg4: #f5f5f5;
+      --bg5: #ffffff;
+
+
+
+    
+    }
+    * { 
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    body {
+      background: linear-gradient(120deg, var(--bg1), var(--bg3), var(--bg2), var(--bg5), var(--bg4));
+      background-size: 300% 300%;
+      animation: moveGradient 22s ease-in-out infinite;
+      margin: 0;
+      font-family: inherit;
+      
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+    body.modal-open {
+      overflow: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 32px 8px 14px;
+      background: transparent;
+    }
+    header img.logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      background: transparent;
+      border-radius: 16px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--main-color);
+      margin: 0 0 8px 0;
+      letter-spacing: .5px;
+    }
+    header .description {
+      color: #3a3a3a;
+      font-size: 1.12rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      background: var(--main-color);
+      padding: 0.7rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 14px #00214711;
+      border-radius: 0 0 18px 18px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.07rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: var(--transition);
+      letter-spacing: 0.5px;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent-color);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 2vw;
+    }
+    section {
+      margin-bottom: 45px;
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+      text-align: center;
+    }
+    section h2 {
+      color: var(--main-color);
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 0 auto 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      letter-spacing: .7px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border: 2px solid transparent;
+      position: relative;
+      cursor: pointer;
+    }
+    section h2:hover {
+      box-shadow: 0 0 0 2px var(--accent-color);
+      background: #f0fff8;
+      transform: translateY(-3px);
+    }
+    section h2 i {
+      margin-left: 10px;
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+    }
+    .services-intro {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      display: none;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .services-intro.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .services-intro p {
+      margin: 0 0 15px;
+      color: #333;
+    }
+    .services-intro strong {
+      color: var(--main-color);
+      font-weight: 800;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 0;
+    }
+    .service-card {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      letter-spacing: .5px;
+      background: var(--main-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 33, 71, 0.25);
+      transition: var(--transition);
+      border: 2px solid var(--main-color);
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+      flex-direction: row;
+      gap: 8px;
+      min-width: 180px;
+    }
+    .service-card:hover {
+      box-shadow: 0 0 0 2px var(--accent-color);
+      background: #fff;
+      color: var(--main-color);
+      transform: translateY(-3px) scale(1.05);
+    }
+    .service-card i {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin: 0;
+      transition: var(--transition);
+    }
+    .service-card:hover i {
+      color: var(--main-color);
+      transform: rotate(10deg);
+    }
+    .price-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      right: 0; left: 0; top: 0; bottom: 0;
+      background: rgba(0,0,0,0.25);
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .price-modal.active {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 22px;
+      padding: 32px 25px 22px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,.14);
+      min-width: 270px;
+      max-width: 92vw;
+      text-align: center;
+      transform: scale(0.9);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .price-modal.active .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .modal-content h3 {
+      margin: 0 0 15px;
+      color: var(--main-color);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+    .modal-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .modal-content li {
+      font-size: 1.08rem;
+      margin-bottom: 9px;
+      color: #222;
+    }
+    .close-modal {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      font-size: 1.01rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px auto 0;
+      transition: background .18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .close-modal:hover { background: #17b75a; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 17px;
+      margin-bottom: 7px;
+      margin-top: 7px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 13px;
+      position: relative;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      aspect-ratio: 1/1;
+      transition: transform 0.3s ease;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+      loading: lazy;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .cta-button {
+      text-decoration: none;
+      background: var(--accent-color);
+      color: #fff;
+      font-size: 1.09rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 30px;
+      padding: 11px 28px;
+      margin: 0 auto 11px;
+      display: inline-block;
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: none;
+      letter-spacing: 1px;
+    }
+    .cta-button i { margin-left: 7px; }
+    .cta-button:hover, .cta-button:focus {
+      background: #17b75a;
+      transform: scale(1.04);
+    }
+    form {
+      max-width: 350px;
+      margin: 20px auto 0;
+      background: rgba(255,255,255,0.8);
+      border-radius: 13px;
+      padding: 15px 14px 12px;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: none;
+    }
+    input, textarea, button, select {
+      padding: 11px;
+      border: 1.2px solid #dbeee7;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-family: 'Tajawal', sans-serif;
+      background: #fff;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      background: #e9f5ec;
+    }
+    form button[type="submit"] {
+      margin-top: 6px;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 3px 10px rgba(26, 207, 100, 0.25);
+      white-space: nowrap;
+    }
+    .contact-btn:hover {
+      background: #17b75a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(26, 207, 100, 0.35);
+    }
+    .contact-btn i {
+      margin-left: 8px;
+      font-size: 1.1rem;
+    }
+    .phone-btn {
+      background: var(--main-color);
+      box-shadow: 0 3px 10px rgba(0, 33, 71, 0.25);
+    }
+    .phone-btn:hover {
+      background: #003366;
+      box-shadow: 0 5px 14px rgba(0, 33, 71, 0.35);
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .contact-icons a {
+      background: #ffffff;
+      color: var(--main-color);
+      font-size: 1.6rem;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      text-decoration: none;
+      outline: none;
+      border: none;
+    }
+    .contact-icons a:hover {
+      background: var(--accent-color);
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .contact-icons a:focus {
+      outline: none;
+    }
+    .qr-container {
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .qr-block img {
+      border-radius: 0 !important;
+      background: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      width: 140px !important;
+      max-width: 100% !important;
+      height: auto;
+      object-fit: contain;
+      loading: lazy;
+    }
+    footer {
+      background: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 14px 0;
+      font-size: 1rem;
+      margin-top: 18px;
+      border-radius: 16px 16px 0 0;
+      letter-spacing: 1px;
+      box-shadow: 0 -3px 14px #1acf6412;
+    }
+    
+    /* التعديلات الجديدة */
+    #services h2 {
+      background-color: var(--main-color);
+      color: var(--accent-color);
+      border: 2px solid var(--main-color);
+    }
+    #services h2:hover {
+      background-color: var(--accent-color);
+      color: var(--main-color);
+      border-color: var(--accent-color);
+    }
+    
+    @media (max-width: 900px) {
+      main { padding: 0 1vw; }
+      .gallery { gap: 10px; }
+      .service-card {
+        padding: 10px 16px;
+        font-size: 1rem;
+        min-width: 160px;
+      }
+    }
+    @media (max-width: 600px) {
+      .services-list {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      .service-card {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 1rem;
+        min-width: auto;
+      }
+      header { padding: 20px 2px 7px; }
+      header img.logo { width: 80px; height: 80px; }
+      nav { gap: 4px; padding: 0.6rem 0; }
+      nav a { font-size: 0.96rem; padding: 7px 7px;}
+      section { margin-bottom: 23px;}
+      .gallery { grid-template-columns: 1fr; }
+      .qr-container { gap: 5px; }
+      section h2 { 
+        font-size: 1.5rem; 
+        padding: 12px 20px;
+        margin-bottom: 25px;
+      }
+      .services-intro {
+        padding: 15px;
+        font-size: 1rem;
+      }
+      .modal-content {
+        padding: 24px 20px;
+      }
+      .modal-content h3 {
+        font-size: 1.5rem !important;
+      }
+      .modal-content li {
+        font-size: 1.2rem !important;
+      }
+      .close-modal {
+        font-size: 1.2rem !important;
+        padding: 8px 24px;
+        width: auto;
+        height: auto;
+        border-radius: 24px;
+      }
+    }
+    ::selection { background: #1acf6433; }
+  
+    /* Injected gallery scroll CSS */
+
+
+
+
+/* ✅ Gallery Scroll Polished */
+.gallery-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+}
+.gallery-scroll::-webkit-scrollbar { height: 6px; }
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+.gallery-scroll img {
+  max-height: 65vh;
+  max-width: 90vw;
+  border-radius: 12px;
+  border: 1.5px solid var(--accent-color);
+  transition: .3s;
+  flex-shrink: 0;
+}
+.gallery-scroll img:hover { transform: scale(1.04); }
+
+
+/* Beautify modal text */
+.modal-content h3 {
+  color: var(--accent-color) !important;
+  font-size: 1.4rem !important;
+}
+.modal-content li {
+  color: var(--accent-color) !important;
+  font-size: 1.05rem !important;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Smaller nicer buttons with modern hover */
+.service-card {
+  font-size: 1rem !important;
+  padding: 10px 16px !important;
+  min-width: 150px !important;
+  border-radius: 10px !important;
+}
+.service-card i {
+  font-size: 1.1rem !important;
+  color: #fff !important;
+  background: var(--accent-color);
+  padding: 6px;
+  border-radius: 50%;
+}
+.service-card:hover i {
+  background: var(--main-color);
+  color: #fff !important;
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* Close button prettier */
+.close-modal {
+  width: 36px !important;
+  height: 36px !important;
+  font-size: 1rem !important;
+  background: var(--main-color) !important;
+  border-radius: 50% !important;
+}
+.close-modal:hover {
+  background: var(--accent-color) !important;
+}
+
+
+/* Polished styles */
+
+/* Services intro blur box */
+.services-intro {
+  background: rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 1rem !important;
+}
+
+/* Services header button smaller with nicer icon */
+#services h2 {
+  font-size: 1.3rem !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+}
+#services h2 i {
+  font-size: 1.2rem !important;
+  margin-left: 8px !important;
+}
+
+/* Services list side by side */
+.services-list {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 20px !important;
+}
+
+/* Navbar polish */
+nav {
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid var(--accent-color);
+}
+nav a {
+  transition: background 0.3s ease, transform 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav a:hover {
+  backdrop-filter: blur(4px);
+  background: rgba(26,207,100,0.25) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Modal text smaller */
+.modal-content li {
+  font-size: 0.95rem !important;
+}
+
+
+/* ✅ أنيميشن لصورة الخدمات */
+.services-image {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeZoomIn 1s ease forwards;
+}
+
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* صورة الخدمات - بدون خلفية/إطار + تصغير + انبثاق من أعلى */
+.services-image-container {
+  text-align: center;
+  margin: 15px 0 25px;
+}
+
+.services-image {
+  max-width: 80%;
+  height: auto;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease;
+}
+
+/* عند إظهار المحتوى */
+.services-intro.show .services-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* صورة زخرفية فوق زر تواصل معنا */
+.bottom-image {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.bottom-image img {
+  max-width: 90%;
+  height: auto;
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  animation: fadeInClear 2.5s ease forwards, floaty 6s ease-in-out infinite;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* أنيميشن: فيد + إزالة الضبابية */
+@keyframes fadeInClear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* تأثير الطفو المستمر */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* ✅ Map Section */
+#location { margin:40px auto; text-align:center; }
+#location h2 { font-size:1.3rem; display:flex; align-items:center; justify-content:center; gap:8px; }
+#location .map-container { margin-top:15px; }
+#location .map-container iframe {
+  width:95%; height:250px;
+  border:2px solid var(--accent-color);
+  border-radius:16px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+}
+
+
+/* ✅ تعديل قسم الموقع */
+#location h2 {
+  color: var(--accent-color) !important;
+}
+#location h2 i {
+  color: var(--accent-color) !important;
+}
+#location .map-container iframe {
+  width: 280px !important;
+  height: 280px !important;
+  border-radius: 50% !important;
+  border: 4px solid var(--accent-color) !important;
+  box-shadow: 0 0 20px rgba(26,207,100,0.3) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+
+/* ✅ تحديث قسم الموقع */
+#location h2 {
+  color: var(--main-color) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+#location h2 i {
+  color: var(--main-color) !important;
+}
+#location .map-container iframe {
+  width: 240px !important;
+  height: 240px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--accent-color) !important;
+  box-shadow: 0 0 16px rgba(26,207,100,0.25) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+
+/* ✅ تحديث قسم الموقع النهائي */
+#location h2 {
+  color: #002147 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+#location h2 i {
+  color: #002147 !important;
+}
+#location .map-container iframe {
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--accent-color) !important;
+  box-shadow: 0 0 12px rgba(26,207,100,0.25) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* ✅ الصورة أسفل الخريطة */
+#location .map-container img {
+  display: block;
+  margin: 12px auto 0;
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ✅ تحسين الصورة الزخرفية الكبيرة */
+.bottom-image img {
+  max-width: 75% !important;
+  height: auto !important;
+}
+@media (max-width: 768px) {
+  .bottom-image img {
+    max-width: 95% !important;
+  }
+}
+
+/* ✅ إزالة الإطارات من كل العناوين + تأثير بلور خلف النص + أنيميشن fade */
+section h2 {
+  background: rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(6px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* === Live gradient background === */
+@keyframes moveGradient {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 100%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; background-position: 50% 50% !important; }
+}
+
+/* ===== Footer/NavBar Bottom Fix ===== */
+footer, .footer, .bottom-nav {
+  border-radius: 0 !important; /* حواف حادة */
+}
+
+footer a, .footer a, .bottom-nav a {
+  font-weight: bold !important;
+  font-family: 'Arial Black', 'Cairo', sans-serif !important; /* خط عريض مشابه */
+}
+
+/* === Blur modals for footer links === */
+.overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.2);-webkit-z-index:1200}
+.overlay.active{display:flex;animation:fadeBg .25s ease}
+@keyframes fadeBg{from{opacity:0}to{opacity:1}}
+.panel{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.15);padding:18px;max-width:min(92vw,520px);width:100%;transform:translateY(20px);opacity:0;animation:rise .35s ease forwards}
+.panel.small{max-width:min(92vw,420px)}
+@keyframes rise{to{transform:none;opacity:1}}
+.fade-text{opacity:0;transform:translateY(12px);animation:fadeText .5s ease .05s forwards}
+@keyframes fadeText{to{opacity:1;transform:none}}
+.no-scroll{overflow:hidden}
+
+/* Make modal text and links same color */
+.overlay .panel, .overlay .panel a {
+  color: #222 !important;
+  text-decoration: none;
+}
+
+.panel{
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  color: #111 !important;
+}
+</style>
+<style>
+/* === Overrides & Optimizations === */
+header img.logo { width:160px !important; height:160px !important; }
+.service-card { padding:8px 10px !important; font-size:0.9rem !important; border-radius:8px !important; }
+.service-card svg { width:20px !important; height:20px !important; }
+input, textarea, select { padding:8px !important; font-size:0.9rem !important; border-radius:6px !important; }
+form { max-width:340px !important; padding:12px !important; border-radius:10px !important; }
+.gallery img { border-radius:8px !important; box-shadow:0 4px 12px rgba(0,0,0,.1) !important; transition:transform .3s !important; }
+.gallery img:hover { transform:scale(1.04) !important; }
+.price-modal .close-modal, .modal-close { display:none !important; }
+
+/* === Services Overlay Polished === */
+.services-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 12000;
+}
+.services-overlay.active { display: flex; animation: fadeBg .4s ease; }
+@keyframes fadeBg { from { opacity: 0; } to { opacity: 1; } }
+
+.services-panel {
+  width: min(92vw, 860px);
+  max-height: 88vh;
+  overflow: auto;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 22px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: rise .55s ease .05s forwards;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.services-panel h3 {
+  margin: 0 0 15px 0;
+  text-align: center;
+  color: var(--main-color);
+  font-weight: 900;
+}
+
+.services-panel p {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: #222;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp .7s ease forwards;
+}
+.services-panel p:nth-of-type(1){ animation-delay: .25s; }
+.services-panel p:nth-of-type(2){ animation-delay: .4s; }
+.services-panel p:nth-of-type(3){ animation-delay: .55s; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(25px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.services-panel .services-image {
+  max-width: 90%;
+  margin: 12px auto 20px;
+  display: block;
+  opacity: 0;
+  transform: translateY(50px) scale(.9);
+  animation: imgFade .9s ease .15s forwards;
+}
+@keyframes imgFade {
+  from { opacity:0; transform:translateY(50px) scale(.9); filter:blur(6px); }
+  to   { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+}
+
+.services-close {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  transition: transform .2s ease, background .2s ease;
+}
+.services-close:hover { transform: scale(1.08); background: #17b75a; }
+
+
+/* ✅ Map Section */
+#location { margin:40px auto; text-align:center; }
+#location h2 { font-size:1.3rem; display:flex; align-items:center; justify-content:center; gap:8px; }
+#location .map-container { margin-top:15px; }
+#location .map-container iframe {
+  width:95%; height:250px;
+  border:2px solid var(--accent-color);
+  border-radius:16px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+}
+
+</style>
+<style>
+.bottom-image img,
+.gallery img,
+.gallery-item img,
+#location .map-container img {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+</style>
+<style>
+/* Overrides: عناوين بلا خلفية/إطار + نظافة عامة */
+section h2{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+.services-intro{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+/* روابط الفوتر أبيض مع تفاعل أخضر */
+footer .footer-links a{
+  color:#fff !important;
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.3px;
+  padding:4px 6px;
+  border-radius:6px;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+footer .footer-links a:hover{
+  background: var(--accent-color);
+  color:#fff !important;
+  transform: translateY(-2px);
+}
+/* خلفية مع بلور عند أي نافذة منبثقة */
+.price-modal{
+  background: rgba(0,0,0,.35) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+/* Lightbox أنيق ومتجاوب */
+#lbOverlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display:none; align-items:center; justify-content:center; flex-direction:column;
+  z-index:10000; padding:18px;
+}
+#lbOverlay.active{ display:flex; }
+#lbImage{
+  max-width: min(92vw, 1200px);
+  max-height: 78vh;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: transform .25s ease, opacity .25s ease;
+}
+#lbCaption{
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  max-width: 90vw;
+}
+#lbClose{
+  position: absolute;
+  top: 16px; right: 20px;
+  font-size: 24px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 6px;
+  transition: transform .2s ease, color .2s ease;
+}
+#lbClose:hover{ color: var(--accent-color); transform: scale(1.1); }
+/* تحكم أفضل بتجاوب الواجهة */
+@media (max-width: 900px){
+  nav{ flex-wrap: wrap; gap:8px; }
+  .service-card{ min-width: 150px; }
+  .gallery{ gap: 12px; }
+}
+@media (max-width: 600px){
+  nav a{ font-size:.95rem; padding:6px 10px; }
+  header h1{ font-size:1.8rem; }
+  .gallery{ grid-template-columns: 1fr !important; }
+  .contact-buttons{ width: 96%; }
+}
+/* تأثير ظهور جانبي عند التمرير */
+.reveal{ opacity:0; transform: translateX(26px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.from-left{ transform: translateX(-26px); }
+.reveal.show{ opacity:1; transform: translateX(0); }
+
+/* === Tweaks per user request === */
+nav a { display: inline-flex !important; align-items: center !important; justify-content: center !important; padding: 10px 14px !important; }
+nav { gap: 14px !important; }
+.services-tabs{ display:flex; gap:18px; justify-content:center; align-items:center; margin:10px 0 0; }
+.tab-link{ background:transparent; border:none; font-weight:900; font-size:1.05rem; color:var(--main-color); cursor:pointer; padding:8px 12px; border-bottom:2px solid transparent; transition:color .2s, border-color .2s, transform .2s; }
+.tab-link:hover{ color:var(--accent-color); border-color:var(--accent-color); transform: translateY(-1px); }
+.fade-slide-top{ opacity:0; transform: translateY(-24px); animation: fadeSlideTop .7s ease forwards; }
+@keyframes fadeSlideTop { from { opacity:0; transform: translateY(-24px);} to{ opacity:1; transform: translateY(0);} }
+/* Show close buttons again */
+.price-modal .close-modal{ display:inline-flex !important; align-items:center; justify-content:center; }
+
+/* زر إغلاق صغير شفاف في الزاوية */
+.close-small {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent !important;
+  border: none !important;
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-small:hover {
+  color: rgba(255,255,255,1);
+}
+
+/* نفس تأثير blur للنوافذ */
+.price-modal.active {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.4);
+}
+
+/* Overlay بخلفية بلور للنوافذ */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: none;
+  z-index: 1000;
+}
+.modal-overlay.active { display: block; }
+.price-modal.active { display: flex; z-index: 1001; }
+
+/* Overlay بدون بلور للخلفية */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 1000;
+}
+.modal-overlay.active { display: block; }
+.price-modal.active { display: flex; z-index: 1001; }
+
+/* تطبيق البلور على النافذة نفسها (المحتوى) */
+.price-modal .modal-content {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+}
+
+/* خلفية المحتوى ببلور أبيض أنيق مثل "ماذا نقدم" */
+.price-modal .modal-content {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* مطابقة تامة لتصميم "ماذا نقدم؟" */
+.services-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 12000;
+}
+.services-overlay.active { display: flex; animation: fadeBg .4s ease; }
+
+.services-panel {
+  width: min(92vw, 860px);
+  max-height: 88vh;
+  overflow: auto;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* زر إغلاق صغير شفاف */
+.close-small {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 12px;
+  background: transparent !important;
+  border: none !important;
+  font-size: 20px;
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+.close-small:hover { color: rgba(0,0,0,0.85); }
+
+/* تعديل مكان زر الإغلاق ليكون جانبي علوي */
+.close-small {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent !important;
+  border: none !important;
+  font-size: 20px;
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+.close-small:hover { color: rgba(0,0,0,0.85); }
+
+/* تغيير الإطار الأخضر حول الصور إلى أزرق جميل */
+.gallery-scroll img {
+  border: 3px solid rgba(30,144,255,0.6); /* أزرق دودجر */
+  border-radius: 12px;
+  padding: 2px;
+  background: transparent;
+}
+
+/* إزالة أي إطار أو خلفية من الصور */
+.gallery-scroll img {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* استرجاع تأثير البلور الأصلي لخلفية "ماذا نقدم؟" */
+.services-intro {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* === Restored original blur styles === */
+.services-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 12000;
+}
+.services-overlay.active { display: flex; animation: fadeBg .4s ease; }
+.services-panel {
+  width: min(92vw, 860px);
+  max-height: 88vh;
+  overflow: auto;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 22px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: rise .55s ease .05s forwards;
+}
+.services-close {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  transition: transform .2s ease, background .2s ease;
+}
+.services-panel .services-image {
+  max-width: 90%;
+  margin: 12px auto 20px;
+  display: block;
+  opacity: 0;
+  transform: translateY(50px) scale(.9);
+  animation: imgFade .9s ease .15s forwards;
+}
+@keyframes imgFade {
+  from { opacity:0; transform:translateY(50px) scale(.9); filter:blur(6px); }
+  to   { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+}
+@keyframes fadeBg { from { opacity: 0; } to { opacity: 1; } }
+.gallery-scroll img { border: none !important; background: transparent !important; padding: 0 !important; }
+
+/* تأثير نزول تدريجي للصورة عند السكرول */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+  opacity: 1;
+  transform: translateY(0);
+}
+/* تنسيق أجمل للصورة فوق الأسعار */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  display: block;
+  margin: 0 auto 20px auto;   /* توسيط + مسافة أسفل */
+  max-width: 240px;           /* حجم مناسب */
+  height: auto;
+}
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تخصيص صورة الأسعار لتكون أنيقة وصغيرة */
+.price-image {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 180px;
+  height: auto;
+}
+
+/* صورة الأسعار بحجم متوسط + تأثير نزول تدريجي */
+.price-image {
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: 260px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.price-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* صورة الأسعار بحركة نزول سلسة من أعلى لأسفل */
+.price-image {
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: 260px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-40px); /* تبدأ من أعلى */
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.price-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تعديل عرض الشعارات في قسم من أعمالنا شعارات */
+.logo-gallery img {
+  background: none !important;      /* إزالة أي خلفية */
+  border-radius: 50%;              /* خلفية دائرية */
+  border: 3px solid green;         /* إطار أخضر مثل الخريطة */
+  padding: 10px;
+  box-sizing: content-box;
+}
+
+/* إزالة الصناديق البيضاء وأي تأثير zoom حول الشعارات */
+.logo-gallery .card,
+.logo-gallery .logo-box,
+.logo-gallery div {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* الشعارات نفسها مع تأثير fade جانبي */
+.logo-gallery img {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.logo-gallery img.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* إزالة المربعات البيضاء نهائياً في قسم الشعارات فقط */
+.logo-gallery .gallery-item,
+.logo-gallery .gallery-item:hover {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+.logo-gallery .gallery-item::before,
+.logo-gallery .gallery-item::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* الصورة نفسها بدون أي خلفية أو إطار */
+.logo-gallery .gallery-item img {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Fade جانبي للشعارات */
+.logo-gallery .gallery-item img {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.logo-gallery .gallery-item img.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* شبكة متجاوبة للشعارات */
+.logo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* تحسين على الهاتف */
+@media (max-width: 768px) {
+  .logo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .logo-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* Fade جانبي تفاعلي للشعارات */
+.logo-gallery .gallery-item img {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.logo-gallery .gallery-item img.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* تحسين العرض على الهاتف وسطح المكتب */
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* إزالة الإطار التحتي عند الضغط على الأزرار */
+button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* زر تصميم شعار و تصميم بوستر */
+#logoBtn, #posterBtn {
+  background-color: green !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* زر ماذا نقدم */
+#whatWeOfferBtn {
+  background-color: blue !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* إزالة أي إطار أو ظل عند الضغط أو التركيز */
+#logoBtn:focus, #logoBtn:active,
+#posterBtn:focus, #posterBtn:active,
+#whatWeOfferBtn:focus, #whatWeOfferBtn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+</style>
+</head>
+<body>
+<header>
+<img alt="شعار NIO" class="logo" loading="lazy" src="https://i.ibb.co/Q7gNJ9C4/logo.png"/>
+<h1>NIO Marketing</h1>
+<div class="description">نحن خبراء التصميم العصري — شعارات فخمة، بوسترات مبهرة، بأسعار منافسة وسرعة تنفيذ.</div>
+</header>
+<nav>
+<a href="#services">الخدمات</a>
+<a href="#logos">شعارات</a>
+<a href="#posters">بوسترات</a>
+<a href="#contact">تواصل</a>
+</nav>
+<main>
+<section id="services" style="margin-top: 40px;">
+<h2 onclick="toggleServicesIntro()">
+        ماذا نقدم؟ 
+        <i class="fas fa-circle-info"></i>
+</h2>
+<div class="services-intro" id="servicesIntro">
+<div class="services-image-container">
+<img alt="خدمات NIO" class="services-image" loading="lazy" src="https://i.ibb.co/jPrJLd8g/20250831-011032.png"/>
+</div>
+<p>في <strong>NIO Marketing</strong>، نقدم حلولاً إبداعية ومبتكرة تلبي احتياجاتك التسويقية والعلامة التجاریة. فريقنا من المصممين المحترفين یعملون بجد لتحویل أفكارك إلى واقع ملموس.</p>
+<p>نحن نؤمن بأن التصمیم الجید هو أساس النجاح التجاري، ولذلك نقدم خدماتنا بأعلى معايیر الجودة والاحترافیة. سواء كنت بحاجة إلى شعار ممیز یعكس هویتك، أو بوسترات جذابة تلفت الأنظار، نحن هنا لمساعدتك.</p>
+<p>استكشف خدماتنا أدناه واكتشف كيف يمكننا مساعدتك في تحقيق أهدافك التسویقیة وبناء علامتك التجاریة.</p>
+</div>
+<div class="services-tabs"><button class="tab-link" onclick="openWork('logo')">تصميم شعار</button><button class="tab-link" onclick="openWork('poster')">تصميم بوستر</button></div>
+</section>
+<!-- === Services Overlay === -->
+<div aria-hidden="true" class="services-overlay" id="servicesOverlay">
+<div aria-labelledby="servicesTitle" aria-modal="true" class="services-panel" role="dialog">
+<h3 id="servicesTitle">ماذا نقدم؟</h3>
+<img alt="خدمات NIO" class="services-image" loading="lazy" src="https://i.ibb.co/jPrJLd8g/20250831-011032.png"/>
+<p>في <strong>NIO Marketing</strong>، نقدم حلولاً إبداعية ومبتكرة تلبي احتياجاتك التسويقية والعلامة التجاریة. فريقنا من المصممين المحترفين یعملون بجد لتحویل أفكارك إلى واقع ملموس.</p>
+<p>نحن نؤمن بأن التصمیم الجید هو أساس النجاح التجاري، ولذلك نقدم خدماتنا بأعلى معايیر الجودة والاحترافیة. سواء كنت بحاجة إلى شعار ممیز یعكس هویتك، أو بوسترات جذابة تلفت الأنظار، نحن هنا لمساعدتك.</p>
+<p>استكشف خدماتنا أدناه واكتشف كيف يمكننا مساعدتك في تحقيق أهدافك التسویقیة وبناء علامتك التجاریة.</p>
+</div>
+</div>
+<section id="prices">
+<img alt="صورة قسم الأسعار" class="fade-on-scroll price-image" loading="lazy" src="https://i.ibb.co/4wtdTrNf/20250901-033727.png"/><h2>الأسعار</h2>
+<div class="gallery">
+<div class="gallery-item">
+<img alt="الأسعار 1" loading="lazy" src="https://i.ibb.co/0j736DTn/20250725-211259-2.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="الأسعار 2" loading="lazy" src="https://i.ibb.co/XfqF9j2s/20250725-211259-1.jpg"/>
+</div>
+</div>
+</section>
+<section id="logos">
+<h2>من أعمالنا - شعارات</h2>
+<div class="gallery logo-gallery">
+<div class="gallery-item">
+<img alt="شعار 1" loading="lazy" src="https://i.ibb.co/Cp9yM21T/logo1.png"/>
+</div>
+<div class="gallery-item">
+<img alt="شعار 2" loading="lazy" src="https://i.ibb.co/SXJ21nJF/logo3.png"/>
+</div>
+<div class="gallery-item">
+<img alt="شعار 3" loading="lazy" src="https://i.ibb.co/kVjwcVv6/logo2.png"/>
+</div>
+<div class="gallery-item">
+<img alt="4 شعار" loading="lazy" src="https://i.ibb.co/whZm8xL4/20250803-021347.png"/>
+</div>
+</div>
+</section>
+<section id="posters">
+<h2>من أعمالنا - بوسترات</h2>
+<div class="gallery">
+<div class="gallery-item">
+<img alt="بوستر 1" loading="lazy" src="https://i.ibb.co/twhjZJvs/postre1.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="بوستر 2" loading="lazy" src="https://i.ibb.co/bDL19kg/postre2.jpg"/>
+</div>
+<div class="gallery-item">
+<img alt="بوستر 3" loading="lazy" src="https://i.ibb.co/GvwKzCn1/postre3.jpg"/>
+</div>
+</div>
+</section>
+<section id="contact">
+<h2>تواصل معنا</h2>
+<div class="bottom-image">
+<img alt="صورة زخرفية" src="https://i.ibb.co/6cfkjqDd/20250831-021256.png" style="max-width:75%;height:auto;"/>
+</div>
+<div class="contact-buttons">
+<a class="contact-btn phone-btn" href="tel:+213771089064">
+<i class="fas fa-phone"></i>اتصل بنا
+        </a>
+<a class="contact-btn" href="https://wa.me/213771089064" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i>واتساب
+        </a>
+</div>
+<form autocomplete="off" onsubmit="event.preventDefault();alert('تم إرسال رسالتك بنجاح! سنرد عليك قریباً.');this.reset();">
+<input placeholder="اسمك" required="" type="text"/>
+<input placeholder="بريدك الإلكتروني" required="" type="email"/>
+<textarea placeholder="رسالتك" required="" rows="4"></textarea>
+<button class="cta-button" type="submit">أرسل</button>
+</form>
+<div class="contact-icons">
+<a href="https://www.facebook.com/profile.php?id=61575335407711" rel="noopener" target="_blank" title="فیسبوك"><i class="fab fa-facebook-f"></i></a>
+<a href="https://wa.me/213771089064" rel="noopener" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:contact@niomarketing.com" title="إیمیل"><i class="far fa-envelope"></i></a>
+</div>
+<div class="qr-container">
+<div class="qr-block">
+<a href="mailto:mehdi-hachani@outlook.com"><img alt="QR واتساب" loading="lazy" src="https://i.ibb.co/fYdXJRDp/qrcode.png" title="تواصل عبر واتساب"/></a>
+</div>
+</div></section>
+<section id="location">
+<h2><i class="fas fa-map-marker-alt"></i> موقعنا</h2>
+<div class="map-container">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bab+El+Oued,+Algiers,+Algeria,+16008&amp;hl=ar&amp;z=15&amp;output=embed">
+</iframe>
+<img alt="صورة إضافية" loading="lazy" src="https://i.ibb.co/zTR3C9P1/20250803-013034.png"/>
+</div>
+</section>
+</main>
+<footer>
+    © 2025 NIO Marketing
+    <div class="footer-links">
+<a data-open="panel-contact" href="#" role="button">Contact</a> |
+      <a data-open="panel-about" href="#" role="button">About Us</a> |
+      <a data-open="panel-privacy" href="#" role="button">Privacy</a>
+</div>
+</footer>
+<div aria-hidden="true" class="services-overlay" id="modalLogo">
+<div aria-labelledby="logoTitle" class="services-panel" role="dialog"><img alt="صورة الخدمة" class="services-image fade-slide-top" loading="lazy" src="https://i.ibb.co/zMpCpVV/20250901-000401.png"/><h3>بعض أعمالنا</h3><div class="gallery-scroll"><img alt="عمل" loading="lazy" src="https://i.ibb.co/Cp9yM21T/logo1.png"/><img alt="عمل" loading="lazy" src="https://i.ibb.co/SXJ21nJF/logo3.png"/><img alt="عمل" loading="lazy" src="https://i.ibb.co/kVjwcVv6/logo2.png"/><img alt="عمل" loading="lazy" src="https://i.ibb.co/whZm8xL4/20250803-021347.png"/></div></div>
+</div>
+<div aria-hidden="true" class="services-overlay" id="modalPoster">
+<div aria-labelledby="posterTitle" class="services-panel" role="dialog"><img alt="صورة الخدمة" class="services-image fade-slide-top" loading="lazy" src="https://i.ibb.co/CTXDKFD/20250831-235459.png"/><h3>بعض أعمالنا</h3><div class="gallery-scroll"><img alt="عمل" loading="lazy" src="https://i.ibb.co/twhjZJvs/postre1.jpg"/><img alt="عمل" loading="lazy" src="https://i.ibb.co/bDL19kg/postre2.jpg"/><img alt="عمل" loading="lazy" src="https://i.ibb.co/GvwKzCn1/postre3.jpg"/></div></div>
+</div>
+<!-- Modals -->
+<div aria-hidden="true" class="price-modal" id="modalContact">
+<div aria-labelledby="contactTitle" class="modal-content" role="dialog">
+<h3 id="contactTitle">تواصل معنا</h3>
+<ul style="list-style:none;padding:0;margin:0;">
+<li><i class="fas fa-phone"></i> الهاتف: <a href="tel:+213771089064">+213 771 08 90 64</a></li>
+<li><i class="far fa-envelope"></i> البريد: <a href="mailto:mehdi-hachani@outlook.com">mehdi-hachani@outlook.com</a></li>
+</ul>
+</div>
+</div>
+<div aria-hidden="true" class="price-modal" id="modalAbout">
+<div aria-labelledby="aboutTitle" class="modal-content" role="dialog">
+<h3 id="aboutTitle">About Us</h3>
+<p>في <strong>NIO Marketing</strong> نصمّم شعارات وهوية بصرية وبوسترات بتناسق احترافي وسرعة تنفيذ، لنبرز مشروعك بأسلوب عصري يليق بهويتك.</p>
+</div>
+</div>
+<div aria-hidden="true" class="price-modal" id="modalPrivacy">
+<div aria-labelledby="privacyTitle" class="modal-content" role="dialog">
+<h3 id="privacyTitle">Privacy</h3>
+<p>نحترم بيانات عملائنا ونحافظ على سريّتها. لا نشارك معلوماتك مع أي طرف ثالث خارج نطاق الخدمة إلا بموافقتك أو وفق التزام قانوني.</p>
+</div>
+</div>
+<!-- Lightbox -->
+<div aria-hidden="true" id="lbOverlay">
+<button aria-label="Close" id="lbClose">×</button>
+<img alt="" id="lbImage"/>
+<div id="lbCaption"></div>
+</div>
+<div class="modal-overlay"></div>
+<script>
+// Restored overlay behavior from original
+function toggleServicesIntro() {
+      const overlay = document.getElementById('servicesOverlay');
+      const willOpen = !overlay.classList.contains('active');
+      overlay.classList.toggle('active');
+      overlay.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+      document.body.classList.toggle('modal-open', willOpen);
+    }</script><script>
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.services-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay){
+        if (typeof closeServices === 'function') { closeServices(); }
+        if (typeof closeModal === 'function') { closeModal(); }
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden','true');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  });
+});
+</script><script>
+function openWork(type){
+  // أغلق أي نافذة أخرى
+  document.querySelectorAll('.services-overlay.active').forEach(function(m){
+    m.classList.remove('active');
+    m.setAttribute('aria-hidden','true');
+  });
+  var id = type === 'logo' ? 'modalLogo' : 'modalPoster';
+  var modal = document.getElementById(id);
+  if(!modal) return;
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  var hero = modal.querySelector('.services-image');
+  if(hero){
+    hero.classList.remove('fade-slide-top');
+    void hero.offsetWidth; // reflow
+    hero.classList.add('fade-slide-top');
+  }
+}
+function closeModal(){
+  document.querySelectorAll('.services-overlay.active').forEach(function(m){
+    m.classList.remove('active');
+    m.setAttribute('aria-hidden','true');
+  });
+  document.body.classList.remove('modal-open');
+}
+// إغلاق عند الضغط على الخلفية فقط
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.services-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay){
+        closeModal();
+      }
+    });
+  });
+});
+</script><script>
+// إظهار العناصر عند دخولها مجال الرؤية
+document.addEventListener("DOMContentLoaded", function(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  }, {threshold:0.2});
+  document.querySelectorAll(".fade-on-scroll, .price-image").forEach(el=>observer.observe(el));
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", function(){
+  const obsLogos = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("visible");
+      } else {
+        e.target.classList.remove("visible");
+      }
+    });
+  }, {threshold:0.2});
+
+  document.querySelectorAll(".logo-gallery .gallery-item img").forEach(el=>obsLogos.observe(el));
+});
+</script><script>
+// تعطيل زر الماوس الأيمن على الصفحة
+document.addEventListener('contextmenu', function(e){
+  if(e.target.tagName === 'IMG'){
+    e.preventDefault();
+  }
+}, false);
+
+// تعطيل السحب والضغط المطول على الصور
+document.querySelectorAll('img').forEach(function(img){
+  img.setAttribute('onmousedown','return false');
+  img.setAttribute('onselectstart','return false');
+});
+</script><div aria-hidden="true" class="overlay" id="panel-contact"><div aria-labelledby="panel-contact-title" class="panel small" role="dialog"><h3 id="panel-contact-title">تواصل معنا</h3><div class="fade-text"><p>الهاتف: +213771089046<br/>البريد: mehdi-hachani@outlook.com</p></div></div></div><div aria-hidden="true" class="overlay" id="panel-about"><div aria-labelledby="panel-about-title" class="panel small" role="dialog"><h3 id="panel-about-title">من نحن</h3><div class="fade-text">
+<p><strong>Nio Marketing</strong> هي وكالة تسويق رقمية متخصصة في تصميم الشعارات، البوسترات، إدارة الحملات الإعلانية 
+        وتطوير الهوية البصرية. هدفنا هو مساعدة العلامات التجارية على الوصول إلى جمهورها المستهدف 
+        بأفكار إبداعية وحلول مبتكرة تعزز من قيمتها السوقية.</p>
+</div></div></div><div aria-hidden="true" class="overlay" id="panel-privacy"><div aria-labelledby="panel-privacy-title" class="panel small" role="dialog"><h3 id="panel-privacy-title">سياسة الخصوصية</h3><div class="fade-text"><p>نحن نحترم حقوق التصميم ولن ننشره أو نعيد تقديمه لزبون آخر أو نتعامل به على نحو يخل بالملكية الفكرية.</p></div></div></div>
+<script>
+(function(){
+  const qs=s=>document.querySelector(s);
+  const qsa=s=>document.querySelectorAll(s);
+  function openPanel(id){ const o=qs('#'+id); if(o){ o.classList.add('active'); document.body.classList.add('no-scroll'); } }
+  function closePanels(){ qsa('.overlay.active').forEach(o=>o.classList.remove('active')); document.body.classList.remove('no-scroll'); }
+  qsa('[data-open]').forEach(a=>{
+    a.addEventListener('click', function(e){ e.preventDefault(); openPanel(this.getAttribute('data-open')); });
+  });
+  qsa('.overlay').forEach(o=>{
+    o.addEventListener('click', function(e){ if(e.target===o) closePanels(); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closePanels(); });
+})();
+</script>
+</body>
+</html>
